@@ -1,8 +1,6 @@
-FROM node:17-alpine
+FROM nginx
 
-WORKDIR /app/build
-
-COPY ./build .
+COPY ../build /usr/share/nginx/html
 
 EXPOSE 3000
 
