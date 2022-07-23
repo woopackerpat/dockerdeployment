@@ -1,16 +1,19 @@
-version: "3.8"
+version: '3.8'
 services:
-  api:
+  api: 
     build: ./api
-    container_name: api_c
+    container_name: api
+    restart: always
     ports:
       - '4000:4000'
     volumes:
-      - ./api:/app
-      - ./app/node_modules
+      - './api:/app'
+      - /app/node_modules
   myblog:
     build: ./myblog
-    container_name: myblog_c
+    container_name: myblog
+    restart: always
     ports:
       - '3000:3000'
     stdin_open: true
+    tty: true
