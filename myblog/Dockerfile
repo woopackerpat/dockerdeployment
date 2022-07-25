@@ -1,7 +1,15 @@
-FROM nginx
+FROM node:17-alpine
 
-COPY build /usr/share/nginx/html
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
 
 EXPOSE 3000
 
-
+CMD ["npm", "start"]

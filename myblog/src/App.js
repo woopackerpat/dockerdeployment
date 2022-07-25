@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [blogs, setBlogs] = useState([])
   useEffect(() => {
-    fetch('http://localhost:4000/')
+    fetch('http://localhost:8001/')
       .then(res => res.json())
       .then(data => setBlogs(data))
   }, [])
