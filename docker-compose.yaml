@@ -18,4 +18,4 @@ services:
     volumes:
       - '/opt/dockerdeployment/myblog:/app'
       - /app/node_modules
-      - /host/path/nginx.conf:/etc/nginx/nginx.conf
+      - /host/nginx:/etc/nginx
