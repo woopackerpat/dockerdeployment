@@ -5,13 +5,14 @@ WORKDIR /app
 COPY package.json .
 COPY package-lock.json .
 
-RUN npm ci --omit=dev
+# RUN npm ci --omit=dev
+RUN npm install
 
 COPY . .
 
 RUN npm run build
 
-FROM nginx:1.23.1-alpine
+FROM nginx:1.23.1-alpine as prod
 
 COPY --from=build /app/build /user/share/nginx/html
 
