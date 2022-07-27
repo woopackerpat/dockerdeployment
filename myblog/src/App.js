@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [blogs, setBlogs] = useState([])
   useEffect(() => {
-    fetch('http://178.128.87.177:8001')
+    fetch('http://178.128.87.177:8000')
       .then(res => res.json())
       .then(data => setBlogs(data))
   }, [])

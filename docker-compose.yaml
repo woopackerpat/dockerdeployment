@@ -5,17 +5,19 @@ services:
     container_name: api
     restart: always
     ports:
-      - '8001:8001'
+      - '8000:8000'
     volumes:
-      - '/opt/dockerdeployment/api:/app'
+      - /opt/dockerdeployment/api:/app
       - /app/node_modules
+      - ./deploy/api/default.conf:/etc/nginx/sites-available/default
   myblog:
     build: ./myblog
     container_name: myblog
     restart: always
     ports:
-      - '80:3000'
+      - '80:80'
+      - '443:443'
     volumes:
-      - '/opt/dockerdeployment/myblog:/app'
+      - /opt/dockerdeployment/myblog:/app
       - /app/node_modules
-      - /host/nginx/sites-available/default:/etc/nginx/sites-available/default
+      - ./deploy/myblog/default.conf:/etc/nginx/sites-available/default
