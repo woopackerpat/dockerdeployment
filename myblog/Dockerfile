@@ -13,9 +13,9 @@ RUN npm run build
 
 FROM nginx:1.23.1-alpine as prod
 
-RUN apk update -y \
-    && apk install python3-certbot-nginx -y \
-    && certbot --nginx -d patcharapol.in.th -d www.patcharapol.in.th
+RUN apk update
+RUN apk install python3-certbot-nginx 
+RUN certbot --nginx -d patcharapol.in.th -d www.patcharapol.in.th
 
 EXPOSE 80
 
