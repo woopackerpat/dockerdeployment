@@ -5,7 +5,7 @@ services:
     container_name: api
     restart: always
     ports:
-      - '8001:8001'
+      - '8000:8000'
     volumes:
       - '/opt/dockerdeployment/api:/app'
       - /app/node_modules
@@ -14,7 +14,7 @@ services:
     container_name: myblog
     restart: always
     ports:
-      - '80:3000'
+      - '3000:3000'
     volumes:
       - '/opt/dockerdeployment/myblog:/app'
       - /app/node_modules
