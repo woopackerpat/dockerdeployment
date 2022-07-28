@@ -1,5 +1,7 @@
 FROM node as build
 
+RUN mkdir app
+
 WORKDIR /app
 
 COPY package.json .
