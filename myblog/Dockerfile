@@ -17,7 +17,11 @@ FROM nginx:1.23.1-alpine as prod
 
 COPY --from=build /app/build /app/build
 
-# RUN apk update
+RUN apk add --update python3 py3-pip
+RUN apk add certbot
+RUN pip install certbot-nginx
+RUN certbot --nginx -d patcharapol.in.th -d www.patcharapol.in.th
+
 # RUN apk add python3 python3-dev py3-pip build-base libressl-dev musl-dev libffi-dev rust cargo
 # RUN pip3 install pip --upgrade
 # RUN pip3 install certbot-nginx
