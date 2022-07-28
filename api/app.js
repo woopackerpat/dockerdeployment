@@ -22,6 +22,6 @@ app.get('/', (req, res) => {
   ])
 })
 
-app.listen(8001, () => {
+app.listen(8000, () => {
   console.log('listening for requests on port 8001')
 })
