@@ -1,7 +1,7 @@
 version: '3'
 services:
   api: 
-    build: ./api
+    image: api
     container_name: api_c
     restart: always
     ports:
@@ -10,14 +10,14 @@ services:
       - /opt/dockerdeployment/api:/app
       - /app/node_modules
   myblog:
-    build: ./myblog
+    image: myblog
     container_name: myblog_c
     restart: always
     ports:
       - '80:80'
       - '443:443'
     volumes:
-      - ./myblog/nginx/sites-available/:/etc/nginx/sites-available/:rw
+      - ./myblog/nginx/sites-available:/etc/nginx/sites-available/:rw
     # volumes:
     #   - ./myblog/default.conf:/etc/nginx/conf.d/default.conf/:ro
     #   - ./certbot/www:/var/www/certbot/:ro
