@@ -14,7 +14,7 @@ services:
     container_name: myblog
     restart: always
     ports:
-      - '3000:3000'
+      - '80:3000'
     volumes:
       - '/opt/dockerdeployment/myblog:/app'
       - /app/node_modules
