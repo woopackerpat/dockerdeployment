@@ -19,4 +19,5 @@ services:
     volumes:
       - /opt/dockerdeployment/myblog:/app
       - /app/node_modules
-      - ./default.conf:/etc/nginx/sites-available/default
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/www:/var/www/certbot/:ro
